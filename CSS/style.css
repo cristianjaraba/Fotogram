@@ -4,7 +4,7 @@
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 400;
-  src: url('./ASSETS/fonts/figtree-v9-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../ASSETS/fonts/figtree-v9-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* figtree-500 - latin */
 @font-face {
@@ -12,7 +12,7 @@
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 500;
-  src: url('./ASSETS/fonts/figtree-v9-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../ASSETS/fonts/figtree-v9-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* figtree-700 - latin */
 @font-face {
@@ -20,7 +20,7 @@
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 700;
-  src: url('./ASSETS/fonts/figtree-v9-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../ASSETS/fonts/figtree-v9-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* figtree-800 - latin */
 @font-face {
@@ -28,7 +28,7 @@
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 800;
-  src: url('./ASSETS/fonts/figtree-v9-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../ASSETS/fonts/figtree-v9-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* Variables */
@@ -40,3 +40,169 @@
   --footer-color: rgba(153, 172, 179, 1);
   --bg-dialog: rgba(9, 33, 42, 1);
 }
+
+/* Design */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+
+    font-family: 'Figtree';
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg-color);
+}
+header{
+    background-color: var(--bg-header);
+
+    padding: 20px max(calc(50% - 720px), 140px) 20px max(calc(50% - 720px), 140px);
+    
+}
+.header-elements-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+header svg{
+    width: clamp(24px, 10vw, 60px);
+    height: auto;
+}
+h1{
+    font-size: clamp(24px, 2vw + 1rem, 42px);
+    color: white;
+    font-weight: 800;
+}
+
+h2{
+    font-size: clamp(38px, 3vw + 1rem, 56px);
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 160px;
+}
+main{
+    flex: 1;
+
+    background-color: var(--bg-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-left: max(calc(50% - 720px), 140px);
+    padding-right: max(calc(50% - 720px), 140px);
+}
+#fotos-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 160px;
+    padding-top: 160px;
+}
+#fotos-container img{
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+
+    outline: 1px solid rgb(98, 123, 132);
+}
+#fotos-container img:hover{
+    outline: 2px solid rgb(147, 187, 200)
+}
+footer{
+    background-color: var(--bg-footer);
+
+    color: var(--footer-color);
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    padding: 30px 0;
+
+    border-top-left-radius: 50% 40px;
+    border-top-right-radius: 50% 40px;
+
+}
+
+footer svg {
+    width: clamp(100px, 20vw, 150px); 
+    height: auto;
+}
+dialog{
+    width: 50%;
+    height: 65%; 
+
+    background-color: rgb(28, 72, 90);
+
+    border-radius: 20px;
+    border: none;
+
+    position: fixed;  
+    inset: 0;          
+    margin: auto;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 10px;
+}
+dialog img{
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+  header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+h2{
+    padding-top: 40px;
+}
+#fotos-container{
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+#fotos-container img {
+    width: 120px;
+    height: 120px;
+}
+}
+
+
+/* @media screen and (max-width: 479px) */
+
+@media screen and (max-width: 767px)
+{
+    dialog{
+     width: 80%;
+    height: 50%;
+    }
+}
+
+/* 
+
+@media screen and (min-width: 768px) and (max-width: 1279px) */
