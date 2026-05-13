@@ -22,5 +22,9 @@ let myImgs = [
 
 const fotosContainerRef = document.getElementById("fotos-container");
 for (let i = 0; i < myImgs.length; i++) {
-    fotosContainerRef.innerHTML += `<img src="./ASSETS/images/${myImgs[i]}">`;
+    fotosContainerRef.innerHTML += getNoteTemplate(i);
+}
+
+function getNoteTemplate(index) {
+    return `<img src="./ASSETS/images/${myImgs[index]}">`;
 }

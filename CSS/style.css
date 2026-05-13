@@ -113,7 +113,9 @@ main{
     outline: 1px solid rgb(98, 123, 132);
 }
 #fotos-container img:hover{
-    outline: 2px solid rgb(147, 187, 200)
+    outline: 2px solid rgb(147, 187, 200);
+
+    cursor: pointer;
 }
 footer{
     background-color: var(--bg-footer);
