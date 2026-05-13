@@ -155,16 +155,16 @@ dialog{
     margin: auto;
 
     color: white;
-
+    
+    padding: 30px 20px;
+}
+dialog[open]{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 45px;
-    
-    padding: 30px 20px;
 }
-
 dialog > header {
     all: unset;
 
@@ -207,7 +207,7 @@ dialog img{
 dialog > footer {
     all: unset;
 
-    width: 100%;
+    width: calc(100% - 40px);
 
     display: flex;
     flex-direction: row;
@@ -217,7 +217,6 @@ dialog > footer {
 
     color: white;
     font-weight: 500;
-    /* font-size: clamp(16px, 1rem + 0.5vw, 24px); */
     font-size: 16px;
 
     border-top-left-radius: 0;

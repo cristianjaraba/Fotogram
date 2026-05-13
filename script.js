@@ -22,6 +22,8 @@ let myImgs = [
 
 const fotosContainerRef = document.getElementById("fotos-container");
 const dialogRef = document.getElementById("dialog");
+const closeDialogBtnRef = document.getElementById("close-dialog-btn");
+
 for (let i = 0; i < myImgs.length; i++) {
     fotosContainerRef.innerHTML += getNoteTemplate(i);
 }
@@ -32,4 +34,8 @@ function getNoteTemplate(index) {
 
 function openDialog() {
     dialogRef.showModal();
+}
+
+function closeDialog() {
+    dialogRef.close();
 }
