@@ -21,21 +21,29 @@ let myImgs = [
 ];
 
 const fotosContainerRef = document.getElementById("fotos-container");
+const fotoMainRef = document.getElementById("main-foto");
+const fotoDialogRef = document.getElementById("dialog-foto");
 const dialogRef = document.getElementById("dialog");
 const closeDialogBtnRef = document.getElementById("close-dialog-btn");
+
 
 for (let i = 0; i < myImgs.length; i++) {
     fotosContainerRef.innerHTML += getNoteTemplate(i);
 }
 
 function getNoteTemplate(index) {
-    return `<img onclick="openDialog()" src="./ASSETS/images/${myImgs[index]}">`;
+    return `<img id="main-foto" onclick="openDialog(event)" src="./ASSETS/images/${myImgs[index]}">`;
 }
 
-function openDialog() {
+function openDialog(e) {
     dialogRef.showModal();
+    fotoDialogRef.src = e.target.src;
 }
 
 function closeDialog() {
     dialogRef.close();
 }
+
+// fotoRefDialog.src = foto.firstElementChild.src;
+//             fotoNameRef.innerHTML = fotoRefDialog.src.split("/images/")[1];
+//             fotoIndexRef.innerHTML = `${imagesList.indexOf(fotoRefDialog.src)+1}/${imagesList.length}`;
