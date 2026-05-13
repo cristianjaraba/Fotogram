@@ -21,10 +21,15 @@ let myImgs = [
 ];
 
 const fotosContainerRef = document.getElementById("fotos-container");
+const dialogRef = document.getElementById("dialog");
 for (let i = 0; i < myImgs.length; i++) {
     fotosContainerRef.innerHTML += getNoteTemplate(i);
 }
 
 function getNoteTemplate(index) {
-    return `<img src="./ASSETS/images/${myImgs[index]}">`;
+    return `<img onclick="openDialog()" src="./ASSETS/images/${myImgs[index]}">`;
+}
+
+function openDialog() {
+    dialogRef.showModal();
 }

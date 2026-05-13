@@ -139,11 +139,13 @@ footer svg {
     width: clamp(100px, 20vw, 150px); 
     height: auto;
 }
-dialog{
-    width: 50%;
-    height: 65%; 
 
-    background-color: rgb(28, 72, 90);
+dialog{
+
+    width: 300px;
+    height: 600px;
+
+    background-color: aqua;
 
     border-radius: 20px;
     border: none;
@@ -157,15 +159,75 @@ dialog{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    padding: 10px;
+    justify-content: space-between;
+    gap: 45px;
+    
+    padding: 30px 20px;
 }
+
+dialog > header {
+    all: unset;
+
+    width: 100%;
+
+    padding: 0;
+
+    color: white;
+    font-size: clamp(18px, 1rem + 1vw, 24px);
+    font-weight: 700;
+
+    background-color: inherit;
+
+    display: flex;
+    flex-direction: column;
+}
+
+dialog > header svg{
+    width: 32px;
+    height: 32px;
+}
+
+#close-dialog-btn{
+    align-self: flex-end;
+    background-color: transparent;
+    border-style: none;
+
+}
+
+#foto-name-display{
+    align-self: flex-start;
+}
+
 dialog img{
     max-width: 100%;
     height: auto;
     max-height: 100%;
+}
+
+dialog > footer {
+    all: unset;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    background-color: inherit;
+
+    color: white;
+    font-weight: 500;
+    /* font-size: clamp(16px, 1rem + 0.5vw, 24px); */
+    font-size: 16px;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    padding: 0 20px;
+}
+footer svg{
+    width: 24px;
+    height: 24px;
 }
 
 /* Responsive design */
@@ -194,16 +256,64 @@ h2{
 }
 }
 
-
-/* @media screen and (max-width: 479px) */
-
-@media screen and (max-width: 767px)
-{
+/* Resposnive dialog */
+@media (max-width: 480px) {
     dialog{
-     width: 80%;
-    height: 50%;
-    }
+
+    width: 275px;
+    height: 400px;
 }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    dialog{
+
+    width: 375px;
+    height: 500px;
+}
+}
+@media (min-width: 769px) and (max-width: 1279px) {
+    dialog{
+
+    width: 500px;
+    height: 650px;
+}
+dialog > header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+dialog > footer {
+
+    justify-content: center;
+    gap: 25px
+}
+}
+@media (min-width: 1280px) {
+    dialog{
+
+    width: 550px;
+    height: 700px;
+}
+dialog > header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+dialog > footer {
+
+    justify-content: center;
+    gap: 25px
+}
+}
+
+
+
+/* @media screen and (max-width: 767px)
+{
+    
+} */
 
 /* 
 
