@@ -33,9 +33,8 @@ function getNoteTemplate(index) {
 
 // Dialog functions
 
-function openDialog(i) {
-
-    dialogRef.innerHTML = `
+function getDialogHTML(i) {
+    return `
      <header>
             <button onclick="closeDialog()" id="close-dialog-btn">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,6 +66,11 @@ function openDialog(i) {
                 </svg>
             </button>
         </footer>`;
+}
+
+function openDialog(i) {
+
+    dialogRef.innerHTML = getDialogHTML(i);
 
     dialogRef.showModal();
 }
