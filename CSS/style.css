@@ -191,7 +191,10 @@ dialog > header svg{
     align-self: flex-end;
     background-color: transparent;
     border-style: none;
-
+    border-radius: 50%;
+}
+#close-dialog-btn:hover{
+    background-color: rgba(18, 70, 88, 1);
 }
 
 #foto-name-display{
