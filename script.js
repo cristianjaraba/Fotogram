@@ -1,5 +1,3 @@
-// Load all images and add them to fotos-container div
-
 let myImgs = [
   "anthony-x-graffiti-643065_1280.jpg",
   "erikstrehl-building-6888533_1280.jpg",
@@ -25,7 +23,10 @@ const fotoMainRef = document.getElementById("main-foto");
 const fotoDialogRef = document.getElementById("dialog-foto");
 const dialogRef = document.getElementById("dialog");
 const closeDialogBtnRef = document.getElementById("close-dialog-btn");
+const fotoIndexRef = document.getElementById("foto-index");
+const fotoNameDisplayRef = document.getElementById("foto-name-display");
 
+// Load all images and add them to fotos-container div
 
 for (let i = 0; i < myImgs.length; i++) {
     fotosContainerRef.innerHTML += getNoteTemplate(i);
@@ -35,15 +36,48 @@ function getNoteTemplate(index) {
     return `<img id="main-foto" onclick="openDialog(event)" src="./ASSETS/images/${myImgs[index]}">`;
 }
 
+// Dialog functions
+
 function openDialog(e) {
     dialogRef.showModal();
     fotoDialogRef.src = e.target.src;
+    showFotoName()
+    showFotoIndex();
 }
 
 function closeDialog() {
     dialogRef.close();
 }
 
-// fotoRefDialog.src = foto.firstElementChild.src;
-//             fotoNameRef.innerHTML = fotoRefDialog.src.split("/images/")[1];
-//             fotoIndexRef.innerHTML = `${imagesList.indexOf(fotoRefDialog.src)+1}/${imagesList.length}`;
+function showFotoIndex() {
+    fotoIndexRef.innerHTML = `${myImgs.indexOf(fotoDialogRef.src.slice(36))+1}/${myImgs.length}`;
+}
+
+function showPreviousFoto() {
+    let i = myImgs.indexOf(fotoDialogRef.src.slice(36));
+    
+    if(i === 0){
+        fotoDialogRef.src = "./ASSETS/images/" + myImgs[myImgs.length - 1];
+    }
+    else{
+        fotoDialogRef.src = "./ASSETS/images/" + myImgs[i-1];
+    }
+    showFotoName()
+    showFotoIndex();
+}
+
+function showNextFoto() {
+    let i = myImgs.indexOf(fotoDialogRef.src.slice(36));
+    
+    if(i === myImgs.length - 1){
+        fotoDialogRef.src = "./ASSETS/images/" + myImgs[0];
+    }
+    else{
+        fotoDialogRef.src = "./ASSETS/images/" + myImgs[i+1];
+    }
+    showFotoName()
+    showFotoIndex();
+}
+function showFotoName() {
+    fotoNameDisplayRef.innerHTML = fotoDialogRef.src.slice(36);
+}
