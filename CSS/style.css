@@ -70,7 +70,7 @@ body {
 header {
     background-color: var(--bg-header);
 
-    padding: 20px max(calc(50% - 720px), 140px) 20px max(calc(50% - 720px), 140px);
+    padding: 10px max(calc(50% - 720px), 140px) 10px max(calc(50% - 720px), 140px);
 
 }
 
@@ -96,7 +96,7 @@ h2 {
     color: white;
     font-weight: 800;
     text-align: center;
-    padding-top: 160px;
+    padding-top: 40px;
 }
 
 dialog h2 {
@@ -122,8 +122,8 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-    padding-bottom: 160px;
-    padding-top: 160px;
+    padding-bottom: 60px;
+    padding-top: 60px;
 }
 
 #photos-container img {
@@ -156,7 +156,7 @@ main {
     align-items: center;
     gap: 15px;
 
-    padding: 30px 0;
+    padding: 10px 0;
 
     border-top-left-radius: 50% 40px;
     border-top-right-radius: 50% 40px;
