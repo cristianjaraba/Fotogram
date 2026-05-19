@@ -256,9 +256,10 @@ dialog img {
     width: calc(100% - 40px);
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    gap: 10px;
 
     background-color: inherit;
 
@@ -273,7 +274,8 @@ dialog img {
 }
 
 .dialog-footer p {
-    width: 40px;
+    width: 80px;
+    text-align: center;
 }
 
 .dialog-footer svg {
@@ -293,6 +295,21 @@ dialog img {
     background: rgb(253 91 79 / 20%);
 }
 
+.controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.controls img{
+    height: 24px;
+    width: 24px;
+}
+.arrays-index-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 /* Responsive design */
 @media (max-width: 768px) {
     header {
