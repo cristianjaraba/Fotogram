@@ -137,6 +137,7 @@ function pauseSlideshow() {
     clearInterval(myInterval);
 }
 
+// From AI: 
 dialogRef.addEventListener("close", () => {
   pauseSlideshow();
 });
