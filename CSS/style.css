@@ -99,6 +99,10 @@ h2 {
     padding-top: 160px;
 }
 
+dialog h2 {
+    padding-top: 0px;
+}
+
 main {
     flex: 1;
 
@@ -112,7 +116,7 @@ main {
     padding-right: max(calc(50% - 720px), 140px);
 }
 
-#fotos-container {
+#photos-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +126,7 @@ main {
     padding-top: 160px;
 }
 
-#fotos-container img {
+#photos-container img {
     width: 150px;
     height: 150px;
     border-radius: 20px;
@@ -130,10 +134,15 @@ main {
     outline: 1px solid rgb(98, 123, 132);
 }
 
-#fotos-container img:hover {
+#photos-container img:hover {
     outline: 2px solid rgb(147, 187, 200);
 
     cursor: pointer;
+}
+
+.photo-button {
+    background: transparent;
+    border: none;
 }
 
 .main-footer {
@@ -188,14 +197,16 @@ dialog>header {
 
     padding: 0;
 
-    color: white;
-    font-size: clamp(18px, 1rem + 1vw, 24px);
-    font-weight: 500;
-
     background-color: inherit;
 
     display: flex;
     flex-direction: column;
+}
+
+dialog h2 {
+    color: white;
+    font-size: clamp(18px, 1rem + 1vw, 24px);
+    font-weight: 500;
 }
 
 dialog>header svg {
@@ -218,11 +229,11 @@ dialog>header svg {
     background-color: rgba(13, 50, 64, 1);
 }
 
-#foto-name-display {
+#photo-name-display {
     align-self: flex-start;
 }
 
-section {
+.photo-display-dialog {
     height: 60%;
     width: 100%;
     text-align: center;
@@ -296,12 +307,16 @@ dialog img {
         padding-top: 40px;
     }
 
-    #fotos-container {
+    dialog h2 {
+        padding-top: 0px;
+    }
+
+    #photos-container {
         padding-top: 55px;
         padding-bottom: 55px;
     }
 
-    #fotos-container img {
+    #photos-container img {
         width: 120px;
         height: 120px;
     }
