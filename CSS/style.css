@@ -190,6 +190,10 @@ dialog[open] {
     justify-content: space-between;
 }
 
+body:has(dialog[open]){
+    overflow: hidden;
+}
+
 dialog>header {
     all: unset;
 
