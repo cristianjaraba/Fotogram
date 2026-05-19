@@ -23,8 +23,14 @@ let myImgs = [
 
 // Load all images and add them to photos-container div
 
-for (let i = 0; i < myImgs.length; i++) {
+function init() {
+    renderImgs()
+}
+
+function renderImgs() {
+    for (let i = 0; i < myImgs.length; i++) {
     photosContainerRef.innerHTML += getNoteTemplate(i);
+}
 }
 
 function getNoteTemplate(index) {
