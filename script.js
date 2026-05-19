@@ -1,24 +1,25 @@
 const fotosContainerRef = document.getElementById("fotos-container");
 const dialogRef = document.getElementById("dialog");
 let myImgs = [
-    "anthony-x-graffiti-643065_1280.jpg",
-    "erikstrehl-building-6888533_1280.jpg",
-    "hesamhassani-bridge-7728877_1280.jpg",
-    "michael_kastelic-woman-7977101_1280.jpg",
-    "nicst-road-6975808_1280.jpg",
-    "noelsch-city-4468570_1280.jpg",
-    "peterdargatz-berlin-wall-50730_1280.jpg",
-    "st33lv0ll-berlin-4588073_1280.jpg",
-    "st33lv0ll-building-4679964_1280.jpg",
-    "st33lv0ll1-berlin-3958573_1280.jpg",
-    "wagneranne-berlin-5289802_1280.jpg",
-    "wal_172619-bridge-7770337_1280.jpg",
-    "wal_172619-city-9599967_1280.jpg",
-    "wal_172619-museum-5400973_1280.jpg",
-    "wal_172619-river-5887763_1280.jpg",
-    "wal_172619-train-7779221_1280.jpg",
-    "wal_172619-train-9596810_1280.jpg"
+  ["anthony-x-graffiti-643065_1280.jpg", "Graffiti wall in Berlin"],
+  ["erikstrehl-building-6888533_1280.jpg", "Modern building in Berlin"],
+  ["hesamhassani-bridge-7728877_1280.jpg", "Bridge in Berlin"],
+  ["michael_kastelic-woman-7977101_1280.jpg", "Portrait of a woman"],
+  ["nicst-road-6975808_1280.jpg", "Road in Berlin"],
+  ["noelsch-city-4468570_1280.jpg", "Berlin city view"],
+  ["peterdargatz-berlin-wall-50730_1280.jpg", "Berlin Wall artwork"],
+  ["st33lv0ll-berlin-4588073_1280.jpg", "Berlin street scene"],
+  ["st33lv0ll-building-4679964_1280.jpg", "Old building in Berlin"],
+  ["st33lv0ll1-berlin-3958573_1280.jpg", "Berlin architecture"],
+  ["wagneranne-berlin-5289802_1280.jpg", "Berlin landmark"],
+  ["wal_172619-bridge-7770337_1280.jpg", "Bridge over the river in Berlin"],
+  ["wal_172619-city-9599967_1280.jpg", "Berlin skyline"],
+  ["wal_172619-museum-5400973_1280.jpg", "Museum in Berlin"],
+  ["wal_172619-river-5887763_1280.jpg", "River in Berlin"],
+  ["wal_172619-train-7779221_1280.jpg", "Train in Berlin"],
+  ["wal_172619-train-9596810_1280.jpg", "Berlin train passing by"]
 ];
+
 
 // Load all images and add them to fotos-container div
 
@@ -28,7 +29,7 @@ for (let i = 0; i < myImgs.length; i++) {
 
 function getNoteTemplate(index) {
 
-    return `<img id="main-foto" onclick="openDialog(${index})" src="./ASSETS/images/${myImgs[index]}">`;
+    return `<img id="main-foto" onclick="openDialog(${index})" src="./ASSETS/images/${myImgs[index][0]}" alt="${myImgs[index][1]}">`;
 }
 
 // Dialog functions
@@ -46,11 +47,11 @@ function getDialogHTML(i) {
                 </g>
                 </svg>
             </button>
-            <p>${myImgs[i].split(".jpg")[0]}</p>
+            <p>${myImgs[i][1]}</p>
         </header>
 
         <section id="section">
-            <img id="dialog-foto" src="./ASSETS/images/${myImgs[i]}" alt="">
+            <img id="dialog-foto" src="./ASSETS/images/${myImgs[i][0]}" alt="${myImgs[i][1]}">
         </section>
 
         <footer class="dialog-footer">
