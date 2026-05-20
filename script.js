@@ -132,15 +132,14 @@ function playSlideshow(i) {
         }     
     }, 1000);
 }
-
+// For event handler dialog property onclose
+//and for pause button
 function pauseSlideshow() {
     clearInterval(myInterval);
 }
 
-// From AI: 
-dialogRef.addEventListener("close", () => {
-  pauseSlideshow();
-});
+
+
 
 
 
